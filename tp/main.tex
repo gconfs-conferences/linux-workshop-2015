@@ -1,0 +1,158 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\title{tp \- linux in a nutshell}
+\author{Thomas Michelot \- Raphael Gault \- Fabien Siron \- Francois Mazeau}
+
+\begin{document}
+\lstset{language=bash}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Where is the pdf??}
+Dans cette section, nous allons voire comment obtenir le pdf du tp dans
+sa machine.
+\subsection{find a terminal}
+Avant tout, ouvrons un terminal\ldots 
+\begin{itemize}
+  \item Avec i3, il suffit d'appuyer sur mod et enter simultanement.
+  \item et avec %TODO -> find graph'manager for the epita ubuntu based distro
+\end{itemize}
+\subsection{clone me}
+Nous voulons maintenant cloner le repo git du tp dans notre ordinateur (si vous
+ne savez pas ce qu'est git, % panic a bord, on fait quoi?
+).
+Il suffit d'entrer:
+\begin{lstlisting}
+> git clone https://connard@bitbucket.org/prout/tp-caca % fix URL
+\end{lstlisting}
+
+\subsection{find the tp directory}
+Maintenant, nous allons apprendre nos deux premieres commandes: ls et cd.
+\begin{itemize}
+  \item \emph{ls} (LiSt) permet de lister les fichiers et dossiers du repertoire
+    courant.
+  \item \emph{cd} (Change Directory) permet de changer de repertoire courant.
+    \begin{itemize}
+      \item \emph{cd 42} va dans 42/ si il existe dans le repertoire courant et que
+        c'est un repertoire.
+      \item \emph{cd . } ne fait rien. (en fait, . represente le repertoire
+        courant).
+      \item \emph{cd ..} remonte dans l'arborescence. (user/who/42,user/who)
+      \item \emph{cd -} reviens au dernier repertoire courant.
+    \end{itemize}
+\end{itemize}
+Il nous faut donc aller dans le repertoire du tp\ldots
+\subsection{make me}
+Verifiez qu'il y a bien un Makefile (voire ci-dessus) et ensuite rien de plus
+simple:
+\begin{lstlisting}
+> make
+\end{lstlisting}
+\subsection{read me}
+Pour lire le tp, verifiez qu'il y est bien un pdf dans le repertoire d'abord,
+ensuite:
+\begin{lstlisting}
+> evince tp.pdf
+\end{lstlisting}
+Evince est un simple lecteur de pdf, nous verrons plus tard comment acceder aux
+programmes.
+\newpage
+
+\section{Christmas Tree}
+Le but ici est de reproduire l'arbre suivant:
+%TODO
+
+\section{Let's play with the command line}
+\subsection{Let's get the files}
+\paragraph{}Pour cet exercice vous allez devoir télécharger l'archive suivante,\\
+http://sousdomaine.domaine.fr/directory/file.tar.gz \\ 
+bien entendu, il n'est pas interessant de le faire via le navigateur.\\
+Renseignez vous donc sur \emph{curl} et \emph{wget}. Si ils ne sont pas sur 
+votre systeme, cela fera un bon execice de familiarisation avec votre gestionnaire 
+de paquets. (apt-get pour ubuntu, pacman pour arch).
+
+\subsection{Extraction}
+\paragraph{}Votre prochaine mission est d'extraire les fichier via la ligne de 
+commande. LISEZ LE MANUEL. Indice, commande file.
+
+\subsection{Let's get started}
+\paragraph{}Vous l'avez surement déjà fait mais on ne sait jamais : listez les 
+fichiers extraits.\\
+Vous constaterez qu'il y en a un certain nombre, on va donc les mannipuler!\\
+Commencez par supprimer tous les fichiers à l'extension \emph{.txt}.\\
+\paragraph{}Maintenant, supprimez tous les fichiers qui commences par une 
+lettre \emph{entre a et e}.
+\paragraph{}Ensuite, créez des fichiers appelés test suivis d'un nombre entre 
+1 et 100 (ex : test42).
+\paragraph{}Dernière étape, supprimez tous les fichiers tests suivis de 2 ou 
+3 chiffres.
+
+
+\section{Edit the environment}
+
+\section{Text Editor}
+Les tutoriels integres aux editeurs sont parmi les meilleurs, alors pourquoi
+s'en priver?
+\subsection{Nano}
+%TODO
+\subsection{Vi/Vim} % the best
+\begin{lstlisting}
+> vimtutor
+\end{lstlisting}
+\subsection{Emacs}
+\begin{lstlisting}
+> emacs -nw # in console
+# Ctrl-h t
+\end{lstlisting}
+
+\section{Play with processus}
+Un processus est une instance d'un programme. Quand vous allumez deux terminaux,
+vous creez deux processus, meme si c'est le meme programme. Dans linux, les
+processus sont organises sous la forme d'un arbre, chaque processus peut en
+creer d'autres et tuer un processus tue aussi ses fils.
+\subsection{Watch the processus}
+Differentes possibilites:
+\subsubsection{ps}
+\begin{lstlisting}
+> ps # affiche les processus fils d'une console
+> ps -ax # affiche tous les processus
+> pstree # affiche un arbre des processus
+\end{lstlisting}
+\subsubsection{top/htop}
+\begin{lstlisting}
+> top
+> htop
+\end{lstlisting}
+\section{Advanced part}
+
+\section{Some challenges}
+Voici quelques challenges que vous pouvez relever avec ce tp et pas mal de
+curiosite:
+
+\url{http://ctf.lse.epita.fr/e/s/misc50/}
+
+\url{http://ctf.lse.epita.fr/e/s/misc50-1/}
+
+\url{http://ctf.lse.epita.fr/e/s/misc50-2/} \
+\
+
+rappel: le but n'est pas de faire le tp, mais de l'ouvrir \dots
+
+
+\section{Home made challenges}
+
+Pour ouvrir le pdf de ce challenge vous devrez vous servir de quelques commandes de base.\\
+
+
+\url{http://dotty.fr/tp42.tgz}
+
+\end{document}
