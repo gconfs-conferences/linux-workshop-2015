@@ -11,7 +11,7 @@
 \title{tp \- linux in a nutshell}
 \author{Fabien Siron \- Francois Mazeau \- Thomas Michelot \- Raphael Gault}
 
-\begin{documenuthor{t}
+\begin{document}
 \lstset{language=bash}
 \maketitle
 \newpage
@@ -179,4 +179,16 @@ Pour ouvrir le pdf de ce challenge vous devrez vous servir de quelques commandes
 
 \url{http://dotty.fr/tp42.tgz}
 
+\subsection{Another pdf}
+Un pdf se trouve dans le repertoire "/tp/pdf2". Il a ete offusque a l'aide d'un unique mot repete aleatoirement dans le fichier. Vous devez reussir a identifier ce mot, supprimer chacune de ses occurences, et enfin lire le pdf.\\
+
+\subsubsection{Trouver le mot}
+Vous devez trouver le mot que l'on a utilise pour offusquer le pdf. Il a ete separe en lettres individuelles, qui ont ete reparties aleatoirement dans le fichier "rnd.rnd".
+A vous de reconstituer le mot.\\
+Hint 1 : chaque lettre est entouree des balises "KACI", de cette maniere : "KACI lettre KACI"\\
+Hint 2 : grep pourrait vous interesser
+
+\subsubsection{Desofusquer}
+Maintenant que vous connaissez le mot qui offusque le pdf, vous n'avez plus qu'a supprimer ses occurences dans le pdf.\
+Hint : sed peut vous interesser.
 \end{document}
